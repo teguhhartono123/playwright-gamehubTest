@@ -4,6 +4,12 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+
+# ADD THIS BLOCK: Listens for the cross-repository webhook event trigger
+  repository_dispatch:
+    types: [ run-playwright ]
+
+
 jobs:
   test:
     timeout-minutes: 60
